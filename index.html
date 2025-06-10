@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="EconGym: A Scalable AI Testbed with Diverse Economic Tasks.">
+  <meta name="keywords" content="EconGym, Economic Simulation, Multi-agent RL, AI Policy Learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EconGym: AI Testbed for Economic Simulation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+</head>
+
+<body>
+
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1">EconGym: A Scalable AI Testbed with Economic Benchmarks</h1>
+      <h2 class="subtitle is-4">From pensions to market design, EconGym supports 25+ policy scenarios</h2>
+
+      <div class="buttons is-centered">
+        <a href="https://github.com/Miracle1207/EconGym" class="button is-dark is-rounded">
+          <span class="icon"><i class="fab fa-github"></i></span>
+          <span>Code</span>
+        </a>
+        <a href="https://github.com/Miracle1207/EconGym" class="button is-dark is-rounded">
+          <span class="icon"><i class="ai ai-arxiv"></i></span>
+          <span>Paper</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3">Overview</h2>
+    <div class="content">
+      <p><strong>EconGym</strong> is a modular, multi-agent economic simulation testbed designed to support AI-driven policy evaluation and algorithmic benchmarking. It provides a unified interface for simulating fiscal, monetary, market, and individual-level dynamics using diverse agent types, including rule-based, reinforcement learning, and LLM-based agents.</p>
+
+      <p>It supports over 25 benchmark tasks, each addressing a core research question—from pension sustainability to algorithmic collusion. Every task is defined by a YAML configuration, which specifies agent roles, economic dynamics, and evaluation metrics.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3">Example Visualizations</h2>
+    <div class="columns is-multiline">
+      <div class="column is-half">
+        <figure class="image">
+          <img src="document/img/readme/wealth.gif" alt="Wealth Distribution Over Time">
+          <figcaption class="has-text-centered">Wealth Distribution Over Time</figcaption>
+        </figure>
+      </div>
+      <div class="column is-half">
+        <figure class="image">
+          <img src="document/img/readme/GDP.png" alt="GDP Trend">
+          <figcaption class="has-text-centered">GDP Trend</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3">How to Use</h2>
+    <div class="content">
+      <p>To run a benchmark simulation, use the following command:</p>
+      <pre><code>python main.py --problem_scene "delayed_retirement"</code></pre>
+      <p>Each benchmark scenario is defined in a YAML file under the <code>cfg/</code> directory. Users can also customize economic roles and agent strategies via YAML configuration.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container content">
+    <h2 class="title is-3">BibTeX</h2>
+    <pre><code>@misc{econcgym2025,
+  title={EconGym: A Scalable AI Testbed with Diverse Economic Tasks},
+  author={Qirui Mi et al.},
+  year={2025},
+  note={Under submission},
+  url={https://github.com/Miracle1207/EconGym}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>This website is inspired by <a href="https://nerfies.github.io">nerfies.github.io</a> and licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Feel free to reuse with attribution.</p>
+  </div>
+</footer>
+
+</body>
+</html>
