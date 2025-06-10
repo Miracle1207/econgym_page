@@ -5,43 +5,99 @@
   <meta name="description" content="EconGym: A Scalable AI Testbed with Diverse Economic Tasks.">
   <meta name="keywords" content="EconGym, Economic Simulation, Multi-agent RL, AI Policy Learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EconGym: AI Testbed for Economic Simulation</title>
+  <title>EconGym: AI Testbed for Diverse Economic Tasks</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" href=".static/images/logo.jpg">
 </head>
 
 <body>
 
-<section class="hero is-light">
+<section class="hero">
   <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="title is-1">EconGym: A Scalable AI Testbed with Economic Benchmarks</h1>
-      <h2 class="subtitle is-4">From pensions to market design, EconGym supports 25+ policy scenarios</h2>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">EconGym: A Scalable AI Testbed with Diverse Economic Tasks</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://miracle1207.github.io/miqirui.github.io/">Qirui Mi</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+            </span>
+          </div>
 
-      <div class="buttons is-centered">
-        <a href="https://github.com/Miracle1207/EconGym" class="button is-dark is-rounded">
-          <span class="icon"><i class="fab fa-github"></i></span>
-          <span>Code</span>
-        </a>
-        <a href="https://github.com/Miracle1207/EconGym" class="button is-dark is-rounded">
-          <span class="icon"><i class="ai ai-arxiv"></i></span>
-          <span>Paper</span>
-        </a>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Washington,</span>
+            <span class="author-block"><sup>2</sup>Google Research</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Miracle1207/EconGym"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+
+
 <section class="section">
   <div class="container">
     <h2 class="title is-3">Overview</h2>
     <div class="content">
-      <p><strong>EconGym</strong> is a modular, multi-agent economic simulation testbed designed to support AI-driven policy evaluation and algorithmic benchmarking. It provides a unified interface for simulating fiscal, monetary, market, and individual-level dynamics using diverse agent types, including rule-based, reinforcement learning, and LLM-based agents.</p>
+      <p><strong>EconGym</strong> is a modular and scalable simulation testbed designed for AI-driven economic analysis, policy optimization, and algorithm benchmarking. Built upon rigorous economic modeling, it supports 25+ benchmark tasks involving heterogeneous agents—households, firms, banks, and governments—with structured observation, action, and reward interfaces.</p>
 
-      <p>It supports over 25 benchmark tasks, each addressing a core research question—from pension sustainability to algorithmic collusion. Every task is defined by a YAML configuration, which specifies agent roles, economic dynamics, and evaluation metrics.</p>
+      <p>Users can simulate multi-agent economic dynamics by flexibly combining economic roles and agent algorithms (e.g., rule-based, reinforcement learning, large language models), enabling reproducible research across disciplines.</p>
+
     </div>
   </div>
 </section>
