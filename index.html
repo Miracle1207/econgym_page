@@ -26,28 +26,162 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+
   <style>
-    /* Custom Styles */
-    .hero { background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); }
-    .publication-title { font-family: 'Roboto', sans-serif; font-weight: 700; color: #1a202c; }
-    .section-title { font-family: 'Roboto', sans-serif; font-weight: 600; color: #2d3748; }
-    .publication-authors { font-family: 'Open Sans', sans-serif; color: #4a5568; }
-    .author-link { color: #2b6cb0; text-decoration: underline; transition: color 0.2s; }
-    .author-link:hover { color: #1a4971; }
-    .link-block .button { transition: transform 0.2s; }
-    .link-block .button:hover { transform: scale(1.05); }
-    .image-container { border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    .image-container img { transition: transform 0.3s; }
-    .image-container img:hover { transform: scale(1.02); }
-    .navbar { transition: all 0.3s ease; }
-    .navbar.scrolled { background-color: #ffffff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .abstract-content { font-family: 'Open Sans', sans-serif; line-height: 1.6; }
-    .demo-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; }
-    .demo-carousel figure { scroll-snap-align: start; flex: 0 0 50%; margin-right: 1rem; }
-    .author-block sup { font-size: 0.8em; vertical-align: super; }
-    .institution-list { margin-top: 1rem; font-size: 0.9em; }
-    .institution-list span { display: block; }
-  </style>
+  /* Font imports */
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+
+    @keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+  /* === Base Theme === */
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #1a202c;
+    background-color: #ffffff;
+    line-height: 1.7;
+    font-size: 1.2rem;
+  }
+
+  /* === Hero Background === */
+  .hero {
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  }
+
+  /* 允许标题容器更宽 */
+  .container.is-max-desktop {
+    max-width: 1000px;   /* 默认 Bulma 是 768px，可以适度放大 */
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+
+  /* === Typography === */
+  .section-title, h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    color: #2d3748;
+    letter-spacing: 0.3px;
+    margin-bottom: 1rem;
+  }
+
+  .publication-title {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 600;
+  font-size: 5rem;
+  color: #1a202c;
+  letter-spacing: 0.5px;
+  margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    animation: zoomIn 1s ease-out;
+}
+
+  .publication-authors {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    color: #4a5568;
+    font-size: 1rem;
+  }
+
+  .abstract-content {
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.7;
+    font-size: 1.2rem;
+    color: #2d3748;
+    letter-spacing: 0.1px;
+  }
+
+  /* === Author Links === */
+  .author-link {
+    color: #2b6cb0;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+
+  .author-link:hover {
+    color: #1a4971;
+  }
+
+  /* === Button Effects === */
+  .link-block .button {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 8px;
+  }
+
+  .link-block .button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  /* === Image Style === */
+  .image-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .image-container img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .image-container img:hover {
+    transform: scale(1.015);
+    filter: brightness(1.02);
+  }
+
+  /* === Navbar Scroll Effect === */
+  .navbar {
+    transition: all 0.3s ease;
+  }
+
+  .navbar.scrolled {
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  }
+
+  /* === Carousel === */
+  .demo-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1.2rem;
+    padding-bottom: 1rem;
+  }
+
+  .demo-carousel figure {
+    scroll-snap-align: start;
+    flex: 0 0 50%;
+    margin-right: 0;
+  }
+
+  /* === Author Notes === */
+  .author-block sup {
+    font-size: 0.8em;
+    vertical-align: super;
+  }
+
+  /* === Institutions === */
+  .institution-list {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #4a5568;
+  }
+
+  .institution-list span {
+    display: block;
+  }
+</style>
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -57,16 +191,18 @@
         <a class="navbar-item" href="#">
           <img src="./static/images/logo.jpg" alt="EconGym Logo" width="50">
         </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
-      <div class="navbar-menu">
+      <div id="navbarBasic" class="navbar-menu">
         <div class="navbar-end">
           <a class="navbar-item" href="#abstract">Abstract</a>
           <a class="navbar-item" href="#contributions">Key Contributions</a>
           <a class="navbar-item" href="#demo">Demo</a>
           <a class="navbar-item" href="#user-manual">User Manual</a>
-          <a class="navbar-item" href="#quick-start">Quick Start</a>
-          <a class="navbar-item" href="#results">Results</a>
-          <a class="navbar-item" href="#bibtex">BibTeX</a>
           <a class="navbar-item" href="#contact">Contact</a>
           <a class="navbar-item" href="https://github.com/Miracle1207/EconGym">GitHub</a>
         </div>
@@ -160,79 +296,161 @@
       <div class="image-container">
         <img src="static/images/EconGym.jpg" alt="Overview of EconGym">
         <figcaption class="has-text-centered py-4">
-          <em>Figure 1. Overview of EconGym. Users define tasks by selecting economic roles and agent algorithms, generating dynamic multi-agent trajectories. These trajectories support economic analysis for the economics community and policy optimization for the AI community. Built on rigorous economic theory and modular agent modeling, EconGym enables diverse and cross-domain economic tasks.</em>
+           <strong>Overview of EconGym:</strong> Users define tasks by selecting economic roles and agent algorithms, generating dynamic multi-agent trajectories. These trajectories support economic analysis for the economics community and policy optimization for the AI community. Built on rigorous economic theory and modular agent modeling, EconGym enables diverse and cross-domain economic tasks.
         </figcaption>
-      </div>
-    </div>
-  </section>
 
-  <!-- Demo Section -->
-  <section class="section py-12" id="demo">
-    <div class="container">
-      <h2 class="title is-3 section-title">Demo</h2>
-      <div class="demo-carousel">
-        <figure class="image-container">
-          <img src="static/images/readme/wealth.gif" alt="Wealth Distribution Over Time">
-          <figcaption class="has-text-centered py-2">Wealth Distribution Over Time (Ramsey Households)</figcaption>
-        </figure>
-        <figure class="image-container">
-          <img src="static/images/readme/consumption.gif" alt="Consumption Distribution Over Time">
-          <figcaption class="has-text-centered py-2">Consumption Distribution Over Time (Ramsey Households)</figcaption>
-        </figure>
-
-        <figure class="image-container">
-          <img src="static/images/readme/OLG_consumption.gif" alt="Age-Specific Consumption (OLG Model)">
-          <figcaption class="has-text-centered py-2">Age-Specific Consumption Over Time (OLG Model)</figcaption>
-        </figure>
-        <figure class="image-container">
-          <img src="static/images/readme/pension.gif" alt="Pension Flow Over Time (OLG Model)">
-          <figcaption class="has-text-centered py-2">Pension Flow Over Time (OLG Model)<br>Positive = Received Pension, Negative = Contributions</figcaption>
-        </figure>
       </div>
+      <figure class="image-container">
+          <img src="static/images/EconGym_overflow.gif" alt="Workflow of EconGym">
+          <figcaption class="has-text-centered py-2"><strong>Workflow of EconGym.</strong></figcaption>
+        </figure>
     </div>
   </section>
 
   <!-- Abstract and Contributions -->
-  <section class="section py-12" id="abstract">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3 section-title text-center">Abstract</h2>
-          <div class="content has-text-justified abstract-content">
+<section class="section py-12" id="abstract">
+  <div class="container is-wide">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 section-title text-center">Abstract</h2>
+        <div class="content has-text-justified abstract-content">
             <p><strong>EconGym</strong> is a scalable and modular simulation testbed that bridges <strong>artificial intelligence (AI)</strong> and <strong>economics</strong>, enabling rigorous training, evaluation, and benchmarking of AI algorithms in realistic economic settings.</p>
-            <p>Unlike existing environments that focus on narrow or stylized tasks, EconGym is built upon <strong>rigorous economic theory</strong> and supports over <strong>25 composable economic scenarios</strong> involving <strong>heterogeneous agents</strong>—such as households, firms, banks, and governments. It empowers users to simulate dynamic, multi-agent economic trajectories by flexibly assigning roles and learning algorithms, including <em>reinforcement learning (RL)</em>, <em>large language models (LLMs)</em>, <em>behavior cloning (BC)</em>, <em>rule-based strategies</em>, <em>real-world policies</em>, and more.</p>
-            <p>Whether you are an <strong>economist</strong> looking to conduct economic analysis or experiment with AI algorithms, or an <strong>AI researcher</strong> aiming to develop new algorithms in complex scenarios such as hierarchical, heterogeneous, and large-scale agent dynamics, EconGym offers a powerful playground for tackling real-world economic challenges—from pension reform and taxation to monetary coordination and beyond.</p>
-          </div>
+            <p>Unlike existing economic simulation environments that often focus on a single task, <strong>EconGym</strong> is grounded in <strong>rigorous economic theory</strong> and supports <strong>over 25 economic problems</strong> involving heterogeneous economic roles—such as households, firms, banks, and governments. Each role type includes multiple modeling variants inspired by prior economic research. Users can flexibly assign roles and learning algorithms, including <em>reinforcement learning (RL)</em>, <em>large language models (LLMs)</em>, <em>behavior cloning (BC)</em>, <em>rule-based policies</em>, <em>real-world strategies</em>, and more—to simulate dynamic, multi-agent economic trajectories.</p>
+            <p>Whether you are an <strong>economist</strong> conducting policy analysis or an <strong>AI researcher</strong> designing algorithms for complex, hierarchical, and large-scale environments, <strong>EconGym</strong> offers a powerful testbed to tackle real-world economic challenges—from pension reform and taxation to monetary policy coordination and macroeconomic stability.</p>
         </div>
       </div>
-      <h2 class="title is-3 section-title mt-8" id="contributions">Key Contributions</h2>
-      <div class="content">
-        <ul class="list-disc pl-6">
-          <li><strong>Theory-grounded & extensible modeling:</strong> Models core economic roles—households, firms, banks, and governments—using advanced micro/macro theory, including heterogeneity (e.g., OLG households, Ramsey consumers, monopolistic firms, central banks).</li>
-          <li><strong>Cross-domain task composition:</strong> Tasks are constructed from modular economic roles with well-defined observations, actions, and rewards, enabling customizable and realistic economic simulations across domains such as tax, pension, labor, and monetary policy.</li>
-          <li><strong>Multi-algorithm support & benchmarking:</strong> Seamlessly integrates diverse agent types—RL, LLMs, BC, economic solvers, and real-data agents—supporting reproducible comparisons and hybrid strategies.</li>
-          <li><strong>Scalability & realism:</strong> Efficiently simulates large-scale agent populations (up to <strong>10,000 agents</strong>) with high fidelity, supporting realistic dynamics for policy learning and analysis.</li>
-          <li><strong>A unified testbed for economics × AI:</strong> Empowers both AI researchers and economists to jointly explore complex policy spaces, benchmark algorithmic strategies, and study emergent economic behavior in multi-agent settings.</li>
-        </ul>
-      </div>
     </div>
-  </section>
+  </div>
+</section>
+
+  <section class="section py-12" id="contributions">
+  <div class="container is-wide" >
+    <h2 class="title is-3 section-title mt-8">Key Contributions</h2>
+    <div class="content">
+      <ul class="list-disc pl-6">
+  <li>
+    <strong>Theory-grounded & extensible modeling:</strong>
+    EconGym builds on <strong>advanced microeconomic and macroeconomic theory</strong> to model core economic roles—households, firms, banks, and governments—with research-level rigor. The environment includes heterogeneous agent formulations such as overlapping generations (OLG) households, Ramsey consumers, monopolistic firms, and central banks. This theoretical grounding ensures the platform goes beyond simplistic toy models and supports meaningful economic analysis.
+  </li>
+
+  <li>
+    <strong>Cross-domain task composition:</strong>
+    Real-world economic phenomena rarely occur in isolation—issues like taxation, monetary policy, and aging populations often interact. Traditional simulations tend to study these problems separately due to computational limitations. In contrast, EconGym offers a unified interface for composing agents with different decision-making structures, enabling users to study multiple economic questions simultaneously. For example, combining an OLG household model with both fiscal authority and central bank allows users to explore the interplay between demographic shifts, tax design, and central bank policy. This is made possible by EconGym’s modular architecture, which supports <strong>more than 25 economic tasks</strong> across domains such as pensions, taxation, competition, and personal finance.
+  </li>
+
+  <li>
+    <strong>Multi-algorithm support & benchmarking:</strong>
+    EconGym integrates a wide range of agent learning approaches—including reinforcement learning (<strong>RL</strong>), large language models (<strong>LLMs</strong>), behavior cloning (<strong>BC</strong>), <strong>economic solvers</strong>, <strong>expert-designed rules</strong>, and <strong>real-world policies</strong>. Users can benchmark these algorithms under consistent settings or assign different algorithms to different agents, supporting fair comparisons and hybrid system evaluation.
+  </li>
+
+  <li>
+    <strong>Scalability & realism:</strong>
+    The framework is optimized for efficiency and realism, capable of simulating up to <strong>10,000 agents</strong> with dynamic economic interactions. This scale enables realistic modeling of policy diffusion, market dynamics, and population heterogeneity in large economic systems.
+  </li>
+
+  <li>
+    <strong>A unified testbed for economics × AI:</strong>
+    EconGym serves as a versatile testbed for both economic research and AI development. Users can easily <strong>modify YAML configurations</strong>, plug in <strong>custom agent algorithms</strong>, and <strong>design new simulation scenarios</strong>—making it an ideal environment for experimenting with complex policies and studying emergent multi-agent behavior at scale.
+  </li>
+</ul>
+
+    </div>
+  </div>
+</section>
+
+<section class="section py-12" id="demo">
+  <div class="container">
+    <h2 class="title is-3 section-title">Demo</h2>
+
+    <!-- Wealth Tax Impact Section -->
+    <h3 class="subtitle is-4 mt-5 mb-3">Impact of Different Wealth Taxes on Households</h3>
+    <div class="demo-carousel">
+      <figure class="image-container">
+        <img src="static/images/readme/wealth.gif" alt="Wealth Distribution Over Time">
+        <figcaption class="has-text-centered py-2">Household Wealth Changes (Ramsey Model)</figcaption>
+      </figure>
+      <figure class="image-container">
+        <img src="static/images/readme/consumption.gif" alt="Consumption Distribution Over Time">
+        <figcaption class="has-text-centered py-2">Consumption Distribution Changes (Ramsey Model)</figcaption>
+      </figure>
+    </div>
+
+    <!-- Population Structure Dynamics Section -->
+    <h3 class="subtitle is-4 mt-6 mb-3">Dynamic Population Structure Evolution</h3>
+    <div class="demo-carousel">
+      <figure class="image-container">
+        <img src="static/images/readme/OLG_consumption.gif" alt="Age-Specific Consumption (OLG Model)">
+        <figcaption class="has-text-centered py-2">Age-Specific Consumption Over Time (OLG Model)</figcaption>
+      </figure>
+      <figure class="image-container">
+        <img src="static/images/readme/pension.gif" alt="Pension Flow Over Time (OLG Model)">
+        <figcaption class="has-text-centered py-2">
+          Pension Flow Over Time (OLG Model)<br>
+          Positive = Received Pension, Negative = Contributions
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- Tax Policy Comparison Section -->
+    <h3 class="subtitle is-4 mt-6 mb-3">Comparison of Tax Policies: Saez Tax, DDPG (RL), US Federal Tax</h3>
+    <div class="demo-carousel">
+      <figure class="image-container">
+        <img src="static/videos/optimal_tax_income.gif" alt="Income Distribution Over Time">
+        <figcaption class="has-text-centered py-2">Household Income Distribution Over Time</figcaption>
+      </figure>
+      <figure class="image-container">
+        <img src="static/videos/optimal_tax_income_tax_rate.gif" alt="Income Tax Rate Changes">
+        <figcaption class="has-text-centered py-2">Dynamic Changes in Equivalent Tax Rates</figcaption>
+      </figure>
+      <figure class="image-container">
+        <img src="static/videos/optimal_tax_wealth.gif" alt="Wealth Distribution Over Time">
+        <figcaption class="has-text-centered py-2">Household Wealth Distribution Over Time</figcaption>
+      </figure>
+      <figure class="image-container">
+        <img src="static/videos/optimal_tax_consumption.gif" alt="Consumption Distribution Over Time">
+        <figcaption class="has-text-centered py-2">Household Consumption Distribution Over Time</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+
 
   <!-- User Manual Section -->
   <section class="section py-12" id="user-manual">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 section-title">User Manual</h2>
-      <div class="content">
-        <p>We provide a detailed <strong>User Manual</strong> that covers <strong>25 key economic research questions</strong>, each accompanied by:</p>
-        <ul class="list-disc pl-6">
-          <li>An introduction to the economic issue</li>
-          <li>Recommended choices of economic roles and agent algorithms</li>
-          <li>Baseline experimental results and visualizations</li>
-          <li>A YAML configuration file for running the environment directly</li>
-        </ul>
-        <p>🔗 See the <a href="https://github.com/Miracle1207/EconGym/tree/main/document" class="author-link">document/</a> folder for full documentation and research use cases.</p>
-        <p>Below is an overview of the 25 economic benchmark problems and their corresponding YAML configuration files:</p>
-      </div>
+  <div class="container is-max-desktop"> <!-- 更宽的容器，视觉更舒展 -->
+    <h2 class="title is-3 section-title">User Manual</h2>
+    <div class="content">
+      <p>
+        We provide a detailed <strong>User Manual</strong> covering <strong>25 key economic research questions</strong>. Each problem comes with:
+      </p>
+      <ul class="list-disc pl-6">
+        <li>An introduction to the economic issue</li>
+        <li>Recommended choices of economic roles and agent algorithms</li>
+        <li>Baseline experimental results and visualizations</li>
+        <li>A YAML configuration file for direct environment execution</li>
+      </ul>
+
+      <p>
+        🔗 See the <a href="https://github.com/Miracle1207/EconGym/tree/main/document" class="author-link" target="_blank">document/</a> folder on GitHub for full documentation and research use cases.
+      </p>
+
+      <h3 class="title is-4 mt-6">🚀 Quick Start</h3>
+      <p>
+        After installing the required Python packages, you can run any benchmark scenario with a single command:
+      </p>
+
+      <pre><code>python main.py --problem_scene "delayed_retirement"</code></pre>
+
+      <p>
+        Each <code>--problem_scene</code> flag corresponds to a YAML file in the <code>cfg/</code> directory.
+        You can easily <strong>customize these YAML files</strong> or create your own to define new benchmark tasks.
+      </p>
+
+      <p>
+        Below is an overview of the <strong>25 economic benchmark problems</strong> and their corresponding YAML configuration files:
+      </p>
+    </div>
 
       <h3 class="title is-4 section-title mt-6">🏦 Pension Issues</h3>
       <div class="table-container">
@@ -454,7 +672,7 @@
   <!-- Footer -->
   <footer class="footer py-6 bg-gray-100">
     <div class="content has-text-centered">
-      <p>This website is inspired by <a href="https://nerfies.github.io">nerfies.github.io</a> and licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Feel free to reuse with attribution.</p>
+      <p>This website is inspired by <a href="https://github.com/Miracle1207/econgym_page">econgym_page</a> and licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Feel free to reuse with attribution.</p>
     </div>
   </footer>
 
@@ -467,6 +685,16 @@
       } else {
         navbar.classList.remove('scrolled');
       }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const burger = document.querySelector('.navbar-burger');
+      const menu = document.getElementById(burger.dataset.target);
+
+      burger.addEventListener('click', () => {
+        burger.classList.toggle('is-active');
+        menu.classList.toggle('is-active');
+      });
     });
   </script>
 </body>
