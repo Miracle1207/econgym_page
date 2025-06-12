@@ -206,56 +206,157 @@
   -webkit-overflow-scrolling: touch;
 }
 
-/* 手机适配优化 */
+/* ========= 📱 手机端优化样式（宽度 ≤ 768px）========= */
 @media (max-width: 768px) {
-
-  /* ❶ Hero 标题缩小 */
-  .publication-title {
-    font-size: 2rem;
-    line-height: 1.3;
-    word-break: break-word;
-    padding: 0 1rem;
+  html {
+    font-size: 15px;
   }
 
-  /* ❷ 作者行压缩换行 */
-  .publication-authors {
-    font-size: 0.9rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.4rem 0.8rem;
-  }
-
-  /* ❸ Abstract 字体适当减小，行距减小 */
-  .abstract-content {
+  body {
     font-size: 1rem;
     line-height: 1.5;
     padding: 0 1rem;
+    margin: 0;
+    overflow-x: hidden;
+  }
+  .subtitle.is-4 {
+    font-size: 1.1rem !important;
+    line-height: 1.1;
+    padding: 0 1rem;
+    text-align: left;
+    word-break: break-word;
   }
 
-  /* 表格可以左右滑动 */
-  .table-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+  /* 主标题适配 */
+  .publication-title {
+    font-size: 2rem !important;
+    line-height: 1.3;
+    padding: 0 1rem;
+    text-align: center;
+    word-break: break-word;
   }
 
-  /* 横向滚动图优化 */
-  .demo-carousel figure {
-    flex: 0 0 90%;
+  /* Section 主标题 */
+  .section-title {
+    font-size: 1.25rem !important;
+    padding: 0 1rem;
   }
 
-  /* 图标组自适应 */
-  .social-icons {
+  /* 作者 */
+  .publication-authors {
+    font-size: 0.8rem !important;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 0.3rem 0.6rem;
+    padding: 0 1rem;
   }
 
-  /* 页脚文字缩小一点 */
+  /* 段落与 Abstract */
+  .abstract-content,
+  .content p,
+  .content ul,
+  .content li {
+    font-size: 1rem !important;
+    line-height: 1.5;
+    padding: 0 1rem;
+  }
+  .content ul {
+    padding-left: 1.2rem !important;  /* 原来可能是 2rem 或更多 */
+    margin-left: 0 !important;
+  }
+
+  .content ul li {
+    padding-left: 0 !important;
+    margin-bottom: 1.2rem;  /* 行距更通透 */
+    text-indent: 0;
+  }
+
+  /* 若使用了 Tailwind 的 pl-6 类，需要强行覆盖 */
+  .pl-6 {
+    padding-left: 1.2rem !important;
+  }
+
+ /* ===== 表格滚动 + 单元格修复（尤其适配手机）===== */
+/* === 表格容器，启用横向滚动 === */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
+}
+
+/* === 表格基础样式 === */
+table {
+  width: max-content;  /* ← 关键：允许超出屏幕宽度 */
+  min-width: 600px;
+  table-layout: auto;  /* 不要使用 fixed */
+  font-size: 0.85rem;
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 0.6rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  word-break: break-word;
+}
+
+/* 让 code 标签换行显示 */
+code {
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+}
+
+
+
+  /* 图片和图像容器 */
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Carousel 滑动更自然 */
+  .demo-carousel {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .demo-carousel figure {
+    flex: 0 0 70%;
+  }
+
+  /* 页脚优化 */
   footer .content {
     font-size: 0.85rem;
     padding: 0 1rem;
   }
+
+  /* 联系图标适配 */
+  .social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  /* 去掉 Bulma 默认 section 外边距 */
+  .section {
+    padding: 1.2rem 0;
+  }
+
+  /* 表格字体略缩小 */
+  table {
+    font-size: 0.85rem;
+  }
+
+  /* YAML 代码块缩放 */
+  pre code {
+    font-size: 0.85rem;
+    word-break: break-word;
+  }
 }
+
 
   .institution-list span {
     display: block;
@@ -411,7 +512,6 @@
     <strong>Theory-grounded & extensible modeling:</strong>
     EconGym builds on <strong>advanced microeconomic and macroeconomic theory</strong> to model core economic roles—households, firms, banks, and governments—with research-level rigor. The environment includes heterogeneous agent formulations such as overlapping generations (OLG) households, Ramsey consumers, monopolistic firms, and central banks. This theoretical grounding ensures the platform goes beyond simplistic toy models and supports meaningful economic analysis.
   </li>
-
   <li>
     <strong>Cross-domain task composition:</strong>
     Real-world economic phenomena rarely occur in isolation—issues like taxation, monetary policy, and aging populations often interact. Traditional simulations tend to study these problems separately due to computational limitations. In contrast, EconGym offers a unified interface for composing agents with different decision-making structures, enabling users to study multiple economic questions simultaneously. For example, combining an OLG household model with both fiscal authority and central bank allows users to explore the interplay between demographic shifts, tax design, and central bank policy. This is made possible by EconGym’s modular architecture, which supports <strong>more than 25 economic tasks</strong> across domains such as pensions, taxation, competition, and personal finance.
