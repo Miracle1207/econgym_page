@@ -205,6 +205,21 @@
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
+  .box {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tag {
+  font-weight: 500;
+  font-size: 1rem;
+  margin-right: 4px;
+}
+
+#contributions .tag {
+  font-size: 1rem;
+}
+
 
 /*#acknowledgments p {*/
 /*  font-size: 15px;*/
@@ -357,6 +372,10 @@ code {
   table {
     font-size: 0.85rem;
   }
+    #contributions .tag {
+  font-size: 0.85rem;
+}
+
 
   /* YAML 代码块缩放 */
   pre code {
@@ -369,9 +388,21 @@ code {
   .institution-list span {
     display: block;
   }
+
 </style>
 </head>
 <body>
+
+<!-- AOS (Animate On Scroll) -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 600,
+    once: true
+  });
+</script>
+
   <!-- Navigation Bar -->
   <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="container">
@@ -511,39 +542,81 @@ code {
   </div>
 </section>
 
-  <section class="section py-12" id="contributions">
-  <div class="container is-wide" >
-    <h2 class="title is-3 section-title mt-8">Key Contributions</h2>
-    <div class="content">
-      <ul class="list-disc pl-6">
-  <li>
-    <strong>Theory-grounded & extensible modeling:</strong>
-    EconGym builds on <strong>advanced microeconomic and macroeconomic theory</strong> to model core economic roles—households, firms, banks, and governments—with research-level rigor. The environment includes heterogeneous agent formulations such as overlapping generations (OLG) households, Ramsey consumers, monopolistic firms, and central banks. This theoretical grounding ensures the platform goes beyond simplistic toy models and supports meaningful economic analysis.
-  </li>
-  <li>
-    <strong>Cross-domain task composition:</strong>
-    Real-world economic phenomena rarely occur in isolation—issues like taxation, monetary policy, and aging populations often interact. Traditional simulations tend to study these problems separately due to computational limitations. In contrast, EconGym offers a unified interface for composing agents with different decision-making structures, enabling users to study multiple economic questions simultaneously. For example, combining an OLG household model with both fiscal authority and central bank allows users to explore the interplay between demographic shifts, tax design, and central bank policy. This is made possible by EconGym’s modular architecture, which supports <strong>more than 25 economic tasks</strong> across domains such as pensions, taxation, competition, and personal finance.
-  </li>
+<section class="section py-12" id="contributions">
+  <div class="container is-wide">
+    <h2 class="title is-3 section-title mt-8 has-text-grey-dark">Key Contributions</h2>
 
-  <li>
-    <strong>Multi-algorithm support & benchmarking:</strong>
-    EconGym integrates a wide range of agent learning approaches—including reinforcement learning (<strong>RL</strong>), large language models (<strong>LLMs</strong>), behavior cloning (<strong>BC</strong>), <strong>economic solvers</strong>, <strong>expert-designed rules</strong>, and <strong>real-world policies</strong>. Users can benchmark these algorithms under consistent settings or assign different algorithms to different agents, supporting fair comparisons and hybrid system evaluation.
-  </li>
+    <div class="box mb-5 contribution-box" data-aos="fade-up">
+      <h3 class="title is-5 has-text-link-dark">📐 Theory-grounded & Extensible Modeling</h3>
+      <p>
+        EconGym builds on <strong class="has-text-dark">advanced microeconomic and macroeconomic theory</strong> to model core economic roles—households, firms, banks, and governments—with research-level rigor.
 
-  <li>
-    <strong>Scalability & realism:</strong>
-    The framework is optimized for efficiency and realism, capable of simulating up to <strong>10,000 agents</strong> with dynamic economic interactions. This scale enables realistic modeling of policy diffusion, market dynamics, and population heterogeneity in large economic systems.
-  </li>
+        The environment includes heterogeneous agent formulations such as <span class="tag is-primary is-light">overlapping generations (OLG) households</span>, <span class="tag is-warning is-light">Ramsey consumers</span>, <span class="tag is-success is-light">monopolistic firms</span>, and <span class="tag is-danger is-light">central banks</span>.
 
-  <li>
-    <strong>A unified testbed for economics × AI:</strong>
-    EconGym serves as a versatile testbed for both economic research and AI development. Users can easily <strong>modify YAML configurations</strong>, plug in <strong>custom agent algorithms</strong>, and <strong>design new simulation scenarios</strong>—making it an ideal environment for experimenting with complex policies and studying emergent multi-agent behavior at scale.
-  </li>
-</ul>
+        This theoretical grounding ensures the platform goes beyond simplistic toy models and supports meaningful economic analysis.
+      </p>
+    </div>
 
+    <div class="box mb-5 contribution-box" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="title is-5 has-text-link-dark">🔄 Cross-domain Task Composition</h3>
+      <p>
+        Real-world economic phenomena rarely occur in isolation—issues like taxation, monetary policy, and aging populations often interact.
+      </p>
+      <p>
+        EconGym offers a <strong class="has-text-dark">unified interface</strong> for composing agents with different decision-making structures, enabling users to study multiple economic questions simultaneously.
+        For example, combining an OLG household model with both fiscal authority and central bank allows users to explore the interplay between demographic shifts, tax design, and central bank policy.
+      </p>
+      <p>
+        This is made possible by EconGym’s modular architecture, which supports
+        <span class="tag is-info is-light">more than 25 economic tasks</span>
+        across domains such as pensions, taxation, market competition, and personal decision making.
+      </p>
+    </div>
+
+    <div class="box mb-5 contribution-box" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="title is-5 has-text-link-dark">🧠 Multi-algorithm Support & Benchmarking</h3>
+      <p>
+        EconGym integrates a wide range of agent learning approaches—including
+        <span class="tag is-info is-light">reinforcement learning (RL)</span>,
+        <span class="tag is-primary is-light">large language models (LLMs)</span>,
+        <span class="tag is-warning is-light">behavior cloning (BC)</span>,
+        <span class="tag is-success is-light">economic solvers</span>,
+        <span class="tag is-link is-light">expert-designed rules</span>,
+        <span class="tag is-danger is-light">real-world policies</span>
+      </p>
+      <p>
+        Users can benchmark these algorithms under consistent settings or assign different algorithms to different agents, supporting fair comparisons and hybrid system evaluation.
+      </p>
+    </div>
+
+    <div class="box mb-5 contribution-box" data-aos="fade-up" data-aos-delay="300">
+      <h3 class="title is-5 has-text-link-dark">📊 Scalability & Realism</h3>
+      <p>
+        The framework is optimized for both efficiency and realism, capable of simulating up to
+        <span class="tag is-link is-light">10,000 agents</span> with dynamic economic interactions.
+      </p>
+      <p>
+        This scale enables realistic modeling of policy diffusion, market dynamics, and population heterogeneity in large economic systems.
+      </p>
+    </div>
+
+    <div class="box contribution-box" data-aos="fade-up" data-aos-delay="400">
+      <h3 class="title is-5 has-text-link-dark">🧪 A Unified Testbed for Economics × AI</h3>
+      <p>
+        EconGym serves as a versatile testbed for both economic research and AI development.
+      </p>
+      <p>
+        Users can easily
+        <span class="tag is-success is-light">modify YAML configurations</span>,
+        plug in <span class="tag is-link is-light">custom agent algorithms</span>, and
+        <span class="tag is-danger is-light">design new simulation scenarios</span>—making it an ideal environment for experimenting with complex policies and studying emergent multi-agent behavior at scale.
+      </p>
     </div>
   </div>
 </section>
+
+
+
 
 <section class="section py-12" id="demo">
   <div class="container">
