@@ -206,6 +206,14 @@
   -webkit-overflow-scrolling: touch;
 }
 
+/*#acknowledgments p {*/
+/*  font-size: 15px;*/
+/*  color: #444;*/
+/*  line-height: 1.6;*/
+/*}*/
+
+
+
 /* ========= 📱 手机端优化样式（宽度 ≤ 768px）========= */
 @media (max-width: 768px) {
   html {
@@ -623,7 +631,8 @@ code {
 
       <p>
         Each <code>--problem_scene</code> flag corresponds to a YAML file in the <code>cfg/</code> directory.
-        You can easily <strong>customize these YAML files</strong> or create your own to define new benchmark tasks.
+        You can easily <strong>customize these YAML files</strong> or create your own to define new benchmark tasks tailored to your research needs.
+        For more details on how to run and extend EconGym, please refer to <a href="https://github.com/Miracle1207/EconGym" target="_blank">our GitHub repository</a>.
       </p>
 
       <p>
@@ -850,6 +859,22 @@ code {
     </div>
   </section>
 
+  <section class="section py-12" id="acknowledgments">
+  <div class="container content">
+    <h2 class="title is-3 section-title">Acknowledgments</h2>
+    <p>
+      We sincerely thank
+      <a href="https://liboecon.com" target="_blank" rel="noopener noreferrer">
+        <strong>Prof. Bo Li</strong>
+      </a>
+      from Peking University for his valuable discussions and feedback throughout the development of this project.
+      As an outstanding economist, Prof. Bo Li provided critical guidance on the theoretical foundations of the economic models in EconGym,
+      significantly enhancing the rigor and realism of the platform.
+    </p>
+  </div>
+</section>
+
+
       <!-- Contact Section -->
 <section class="section py-12" id="contact">
   <div class="container is-wide">
@@ -872,12 +897,21 @@ code {
   </div>
 </section>
 
+
+
   <!-- Footer -->
   <footer class="footer py-6 bg-gray-100">
     <div class="content has-text-centered">
       <p>This website is inspired by <a href="https://github.com/Miracle1207/econgym_page">econgym_page</a> and licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Feel free to reuse with attribution.</p>
    </div>
   </footer>
+  <footer>
+  <p>
+    Visitors: <span id="busuanzi_value_site_pv"></span>
+  </p>
+</footer>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   <!-- JavaScript for Sticky Navbar -->
   <script>
@@ -900,13 +934,6 @@ code {
       });
     });
   </script>
-<footer>
-  <p>
-    Visitors: <span id="busuanzi_value_site_pv"></span>
-  </p>
-</footer>
-
-<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 </body>
 </html>
